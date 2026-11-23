@@ -1,0 +1,4 @@
+[submodule "frontend/src/modules/student"]
+	path = frontend/src/modules/student
+	url = https://github.com/Ripon9239/taskhub-student.git
+	branch = main
