@@ -3,7 +3,8 @@ import {
     BrowserRouter,
     Routes,
     Route,
-    Link
+    Link,
+    Outlet
 } from "react-router-dom";
 
 import {
@@ -25,7 +26,10 @@ import StudentDashboard from "./modules/taskhub/student/StudentDashboard";
 
 import "./App.css";
 
-// Homepage feature cards
+// ===================================
+// HOMEPAGE FEATURES
+// ===================================
+
 const features = [
     {
         icon: ClipboardCheck,
@@ -49,14 +53,13 @@ const features = [
     }
 ];
 
-// -----------------------
-// HOMEPAGE
-// -----------------------
+// ===================================
+// HOME PAGE
+// ===================================
 
 function Home() {
     return (
         <main>
-
             {/* HERO SECTION */}
             <section className="th-hero">
                 <div className="th-container th-hero-grid">
@@ -78,7 +81,6 @@ function Home() {
                         </p>
 
                         <div className="th-hero-actions">
-
                             <Link
                                 to="/student"
                                 className="th-btn th-btn-primary"
@@ -93,7 +95,6 @@ function Home() {
                             >
                                 Teacher Portal
                             </Link>
-
                         </div>
 
                         <div className="th-hero-benefits">
@@ -138,7 +139,6 @@ function Home() {
                             </div>
 
                             <div className="th-preview-stats">
-
                                 <div className="th-stat-card">
                                     <BookOpenCheck size={20} />
                                     <strong>12</strong>
@@ -156,15 +156,12 @@ function Home() {
                                     <strong>04</strong>
                                     <span>Upcoming</span>
                                 </div>
-
                             </div>
 
                             <div className="th-preview-list">
-
                                 <h4>Recent Assignments</h4>
 
                                 <div className="th-preview-item">
-
                   <span className="th-task-icon">
                     <BookOpenCheck size={18} />
                   </span>
@@ -177,11 +174,9 @@ function Home() {
                                     <span className="th-status th-status-open">
                     Pending
                   </span>
-
                                 </div>
 
                                 <div className="th-preview-item">
-
                   <span className="th-task-icon">
                     <ClipboardCheck size={18} />
                   </span>
@@ -194,10 +189,9 @@ function Home() {
                                     <span className="th-status th-status-done">
                     Done
                   </span>
-
                                 </div>
-
                             </div>
+
                         </div>
 
                         <div className="th-preview-note">
@@ -205,13 +199,11 @@ function Home() {
                         </div>
 
                     </div>
-
                 </div>
             </section>
 
             {/* FEATURES SECTION */}
             <section className="th-features" id="features">
-
                 <div className="th-container">
 
                     <div className="th-section-heading">
@@ -229,27 +221,21 @@ function Home() {
                     </div>
 
                     <div className="th-features-grid">
-
                         {features.map(
                             ({ icon: Icon, title, description }) => (
-
                                 <article
                                     className="th-feature-card"
                                     key={title}
                                 >
-
                                     <div className="th-feature-icon">
                                         <Icon size={23} />
                                     </div>
 
                                     <h3>{title}</h3>
                                     <p>{description}</p>
-
                                 </article>
-
                             )
                         )}
-
                     </div>
 
                 </div>
@@ -257,21 +243,16 @@ function Home() {
 
             {/* PORTAL SELECTION */}
             <section className="th-portal-section">
-
                 <div className="th-container">
 
                     <div className="th-section-heading">
-
                         <div className="th-section-label">
                             GET STARTED
                         </div>
 
                         <h2>Choose Your Workspace</h2>
 
-                        <p>
-                            Select your portal to continue.
-                        </p>
-
+                        <p>Select your portal to continue.</p>
                     </div>
 
                     <div className="th-portal-grid">
@@ -280,7 +261,6 @@ function Home() {
                             to="/teacher"
                             className="th-portal-card"
                         >
-
                             <div className="th-portal-icon">
                                 <ClipboardCheck size={27} />
                             </div>
@@ -295,14 +275,12 @@ function Home() {
                 Open Teacher Portal
                 <ArrowRight size={18} />
               </span>
-
                         </Link>
 
                         <Link
                             to="/student"
                             className="th-portal-card"
                         >
-
                             <div className="th-portal-icon">
                                 <GraduationCap size={27} />
                             </div>
@@ -317,26 +295,22 @@ function Home() {
                 Open Student Portal
                 <ArrowRight size={18} />
               </span>
-
                         </Link>
 
                     </div>
-
                 </div>
             </section>
-
         </main>
     );
 }
 
-// -----------------------
-// FOOTER
-// -----------------------
+// ===================================
+// HELP FOOTER
+// ===================================
 
 function Footer() {
     return (
         <footer className="th-footer">
-
             <div className="th-container th-footer-help">
 
                 <div className="th-footer-heading">
@@ -368,60 +342,66 @@ function Footer() {
                 </div>
 
             </div>
-
         </footer>
     );
 }
 
-// -----------------------
-// MAIN APPLICATION
-// -----------------------
+// ===================================
+// PUBLIC LAYOUT
+// Navbar and Footer only for public pages
+// ===================================
 
-export default function App() {
+function PublicLayout() {
     return (
-        <BrowserRouter>
-
-            {/* NAVBAR */}
+        <>
             <header className="th-header">
-
                 <div className="th-container th-navbar">
 
                     <Link to="/" className="th-logo">
-
             <span className="th-logo-mark">
               <GraduationCap size={23} />
             </span>
 
                         Task<span>Hub</span>
-
                     </Link>
 
                 </div>
-
             </header>
 
-            {/* ROUTES */}
+            <Outlet />
+
+            <Footer />
+        </>
+    );
+}
+
+// ===================================
+// MAIN APP ROUTING
+// ===================================
+
+export default function App() {
+    return (
+        <BrowserRouter>
             <Routes>
 
-                <Route
-                    path="/"
-                    element={<Home />}
-                />
+                {/* PUBLIC PAGES */}
+                <Route element={<PublicLayout />}>
+                    <Route path="/" element={<Home />} />
+                </Route>
 
+                {/* TEACHER DASHBOARD */}
                 <Route
-                    path="/teacher"
+                    path="/teacher/*"
                     element={<TeacherDashboard />}
                 />
 
+                {/* STUDENT DASHBOARD */}
                 <Route
-                    path="/student"
+                    path="/student/*"
                     element={<StudentDashboard />}
                 />
 
             </Routes>
-
-            <Footer />
-
         </BrowserRouter>
     );
 }
