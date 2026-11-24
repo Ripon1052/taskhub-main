@@ -1,6 +1,14 @@
 
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import StudentDashboard from './modules/student/StudentDashboard';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Link
+} from 'react-router-dom';
+
+import TeacherDashboard from './modules/taskhub/teacher/TeacherDashboard';
+import StudentDashboard from './modules/taskhub/student/StudentDashboard';
+
 import './App.css';
 
 function Home() {
@@ -17,21 +25,13 @@ function Home() {
   );
 }
 
-function TeacherDashboard() {
-  return (
-    <div className="page">
-      <h1>Teacher Dashboard</h1>
-      <p>Welcome to the TaskHub Teacher Portal.</p>
-      <h2>Manage Assignments</h2>
-    </div>
-  );
-}
-
 export default function App() {
   return (
     <BrowserRouter>
       <header className="navbar">
-        <Link to="/" className="brand">TaskHub</Link>
+        <Link to="/" className="brand">
+          TaskHub
+        </Link>
 
         <nav>
           <Link to="/">Home</Link>
@@ -42,8 +42,14 @@ export default function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/teacher" element={<TeacherDashboard />} />
-        <Route path="/student" element={<StudentDashboard />} />
+        <Route
+          path="/teacher"
+          element={<TeacherDashboard />}
+        />
+        <Route
+          path="/student"
+          element={<StudentDashboard />}
+        />
       </Routes>
     </BrowserRouter>
   );
