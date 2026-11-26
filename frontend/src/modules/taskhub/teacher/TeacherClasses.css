@@ -1,0 +1,477 @@
+
+/* TEACHER CLASSES */
+
+.tc-root {
+    width: 100%;
+    color: #0f172a;
+}
+
+.tc-heading,
+.tc-detail-heading,
+.tc-panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.tc-heading {
+    margin-bottom: 25px;
+}
+
+.tc-heading h2,
+.tc-detail-heading h2 {
+    font-size: 25px;
+    margin: 0 0 7px;
+}
+
+.tc-heading p,
+.tc-detail-heading p {
+    margin: 0;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.tc-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    border: 0;
+    background: #2563eb;
+    color: white;
+    padding: 12px 17px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.tc-button:hover {
+    background: #1d4ed8;
+}
+
+/* CLASS CARDS */
+
+.tc-class-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.tc-class-card,
+.tc-class-detail,
+.tc-panel {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 15px;
+}
+
+.tc-class-card {
+    padding: 24px;
+    min-width: 0;
+}
+
+.tc-class-icon {
+    display: grid;
+    place-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 13px;
+    background: #eff6ff;
+    color: #2563eb;
+    flex-shrink: 0;
+}
+
+.tc-class-card h3 {
+    font-size: 18px;
+    margin: 20px 0 8px;
+}
+
+.tc-class-card > p {
+    font-size: 12px;
+    color: #64748b;
+    margin-bottom: 22px;
+}
+
+.tc-class-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 18px;
+    font-size: 12px;
+    color: #64748b;
+}
+
+.tc-class-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.tc-code-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    background: #f1f5f9;
+    padding: 11px 12px;
+    border-radius: 9px;
+}
+
+.tc-code-box code,
+.tc-share-row code {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    overflow-wrap: anywhere;
+}
+
+.tc-code-box button {
+    border: 0;
+    background: transparent;
+    color: #2563eb;
+    cursor: pointer;
+}
+
+.tc-open-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 21px;
+    padding: 0;
+    background: none;
+    border: 0;
+    color: #2563eb;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* CLASS DETAILS */
+
+.tc-back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    color: #2563eb;
+    font-weight: 700;
+    margin-bottom: 23px;
+    cursor: pointer;
+}
+
+.tc-class-detail {
+    padding: 26px;
+    margin-bottom: 22px;
+}
+
+.tc-detail-heading {
+    justify-content: flex-start;
+    margin-bottom: 25px;
+}
+
+.tc-share-section {
+    border-top: 1px solid #e2e8f0;
+    padding-top: 22px;
+}
+
+.tc-share-section > span {
+    color: #64748b;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.tc-share-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 13px;
+}
+
+.tc-copy-message {
+    color: #059669;
+    font-size: 12px;
+    min-height: 15px;
+}
+
+/* REQUESTS AND STUDENTS */
+
+.tc-details-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.tc-panel {
+    min-width: 0;
+    overflow: hidden;
+}
+
+.tc-panel-header {
+    padding: 20px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.tc-panel-header h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.tc-panel-header span {
+    color: #64748b;
+    font-size: 11px;
+}
+
+.tc-person-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+}
+
+.tc-person-row + .tc-person-row {
+    border-top: 1px solid #f1f5f9;
+}
+
+.tc-person-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.tc-person-info strong,
+.tc-person-info small {
+    display: block;
+}
+
+.tc-person-info strong {
+    font-size: 12px;
+}
+
+.tc-person-info small {
+    color: #94a3b8;
+    font-size: 11px;
+    margin-top: 6px;
+}
+
+.tc-request-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.tc-request-actions button {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border: 0;
+    border-radius: 9px;
+    cursor: pointer;
+}
+
+.tc-approve {
+    color: #059669;
+    background: #dcfce7;
+}
+
+.tc-reject {
+    color: #dc2626;
+    background: #fee2e2;
+}
+
+.tc-student-avatar {
+    display: grid;
+    place-items: center;
+    background: #eff6ff;
+    color: #2563eb;
+    width: 37px;
+    height: 37px;
+    border-radius: 10px;
+}
+
+.tc-member-badge {
+    background: #dcfce7;
+    color: #15803d;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 6px 9px;
+    border-radius: 7px;
+}
+
+.tc-empty {
+    padding: 22px;
+    color: #64748b;
+    font-size: 13px;
+}
+
+/* CREATE CLASS MODAL */
+
+.tc-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    padding: 18px;
+    background: rgba(15, 23, 42, 0.55);
+    z-index: 1000;
+}
+
+.tc-modal {
+    width: min(460px, 100%);
+    max-height: 90vh;
+    overflow-y: auto;
+    background: #fff;
+    border-radius: 16px;
+    padding: 25px;
+}
+
+.tc-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.tc-modal-header h2 {
+    font-size: 21px;
+    margin: 0;
+}
+
+.tc-modal-header button {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+.tc-modal form {
+    display: grid;
+    gap: 17px;
+}
+
+.tc-modal form label {
+    display: grid;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.tc-modal input {
+    width: 100%;
+    border: 1px solid #cbd5e1;
+    border-radius: 9px;
+    padding: 13px;
+    outline-color: #2563eb;
+}
+
+.tc-demo-note {
+    font-size: 11px;
+    color: #64748b;
+    margin: 18px 0 0;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1100px) {
+    .tc-class-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 700px) {
+    .tc-class-grid,
+    .tc-details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tc-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .tc-class-detail {
+        padding: 20px;
+    }
+
+    .tc-heading h2,
+    .tc-detail-heading h2 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 420px) {
+    .tc-class-grid {
+        gap: 13px;
+    }
+
+    .tc-class-card {
+        padding: 19px;
+    }
+
+    .tc-person-row {
+        padding: 13px;
+    }
+
+    .tc-share-row {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .tc-share-row .tc-button {
+        width: 100%;
+    }
+}
+
+/* CLASS ACTION BUTTONS */
+
+.tc-card-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-top: 21px;
+    flex-wrap: wrap;
+}
+
+.tc-card-actions .tc-open-button {
+    margin-top: 0;
+}
+
+.tc-delete-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 10px 13px;
+    background: #fff1f2;
+    border: 1px solid #fecdd3;
+    border-radius: 9px;
+    color: #e11d48;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.tc-delete-button:hover {
+    background: #ffe4e6;
+    border-color: #fda4af;
+}
+
+.tc-detail-heading > .tc-delete-button {
+    margin-left: auto;
+}
+
+@media (max-width: 600px) {
+    .tc-detail-heading {
+        flex-wrap: wrap;
+    }
+
+    .tc-detail-heading > .tc-delete-button {
+        margin-left: 0;
+    }
+}
